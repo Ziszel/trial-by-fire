@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class playerMovement : MonoBehaviour
 {
-    private float force = 50;
-    private float rotationSpeed = 25.0f;
+    private float force = 12.0f;
+    private float rotationSpeed = 50.0f;
     private Rigidbody rb;
 
     private void Start()
@@ -12,16 +12,29 @@ public class playerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
     }
 
-    void FixedUpdate()
+    void Update()
     {
         // store movement
-        float zMovement = Input.GetAxis("Vertical");
-        float rotation = Input.GetAxis("Horizontal") *  rotationSpeed;
-        rotation *= Time.deltaTime;
-
-        var movement = new Vector3(0.0f, 0.0f, zMovement);
+        // The below comment I used in combination with the Unity documentation: https://docs.unity3d.com/ScriptReference/index.html
+        // in order to understand rotations and how they work in Unity.
+        // https://gamedevbeginner.com/how-to-rotate-in-unity-complete-beginners-guide/
         
-        transform.Rotate(0.0f, rotation, 0.0f);
-        rb.AddForce(movement * force);
+        // GetAxisRaw will return -1 or 1 with no scaling in-between
+        float zMovement = Input.GetAxisRaw("Vertical");
+        float rotation = Input.GetAxisRaw("Horizontal") *  rotationSpeed;
+
+        if (zMovement > 0)
+        {
+            // transform.forward allows for forward movement dependant on rotation of object
+            rb.velocity = transform.forward * force;
+        }
+        else if (zMovement < 0)
+        {
+            rb.velocity = -transform.forward * force;
+        }
+        else
+        {
+            transform.Rotate(new Vector3(.0f, rotation, 0.0f) * Time.deltaTime);
+        }
     }
 }
