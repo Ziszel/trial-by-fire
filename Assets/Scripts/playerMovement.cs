@@ -3,25 +3,25 @@ using UnityEngine;
 
 public class playerMovement : MonoBehaviour
 {
-    private float zSpeed = 8.0f;
-    private float ySpeed = 50.0f;
-
+    private float force = 50;
+    private float rotationSpeed = 25.0f;
     private Rigidbody rb;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
-        rb.constraints = RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotationZ;
-        rb.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezeRotationX;
     }
 
-    // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        float zTranslation = (Input.GetAxis("Vertical") * zSpeed) * Time.deltaTime;
-        float yTranslation = (Input.GetAxis("Horizontal") * ySpeed) * Time.deltaTime;
+        // store movement
+        float zMovement = Input.GetAxis("Vertical");
+        float rotation = Input.GetAxis("Horizontal") *  rotationSpeed;
+        rotation *= Time.deltaTime;
 
-        transform.Translate(0.0f, 0.0f, zTranslation);
-        transform.Rotate(0.0f, yTranslation, 0.0f);
+        var movement = new Vector3(0.0f, 0.0f, zMovement);
+        
+        transform.Rotate(0.0f, rotation, 0.0f);
+        rb.AddForce(movement * force);
     }
 }
