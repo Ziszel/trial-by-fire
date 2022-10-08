@@ -18,10 +18,10 @@ public class playerMovement : MonoBehaviour
         // The below comment I used in combination with the Unity documentation: https://docs.unity3d.com/ScriptReference/index.html
         // in order to understand rotations and how they work in Unity.
         // https://gamedevbeginner.com/how-to-rotate-in-unity-complete-beginners-guide/
-        
+
         // GetAxisRaw will return -1 or 1 with no scaling in-between
         float zMovement = Input.GetAxisRaw("Vertical");
-        float rotation = Input.GetAxisRaw("Horizontal") *  rotationSpeed;
+        float rotation = Input.GetAxisRaw("Horizontal") * rotationSpeed;
 
         if (zMovement > 0)
         {
@@ -32,9 +32,7 @@ public class playerMovement : MonoBehaviour
         {
             rb.velocity = -transform.forward * force;
         }
-        else
-        {
-            transform.Rotate(new Vector3(.0f, rotation, 0.0f) * Time.deltaTime);
-        }
+
+        transform.Rotate(new Vector3(.0f, rotation, 0.0f) * Time.deltaTime);
     }
 }
