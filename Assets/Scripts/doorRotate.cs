@@ -3,8 +3,6 @@ using UnityEngine;
 public class doorRotate : MonoBehaviour
 {
     public Transform pivotPoint;
-
-    private int testCount = 0;
     // Update is called once per frame
     void Update()
     {

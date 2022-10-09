@@ -8,11 +8,11 @@ public class GameManager : MonoBehaviour
     public void EndGame()
     {
         Debug.Log("You Won!");
-        Invoke("Restart", restartDelay);
+        Invoke("EndGameScene", restartDelay);
     }
 
-    private void Restart()
+    private void EndGameScene()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene("Level2");
     }
 }
