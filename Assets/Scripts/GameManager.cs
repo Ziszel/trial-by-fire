@@ -15,4 +15,10 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene("Level2");
     }
+
+    public void Die()
+    {
+        Debug.Log("you died!");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
 }
