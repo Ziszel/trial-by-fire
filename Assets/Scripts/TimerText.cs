@@ -3,7 +3,7 @@ using System.Globalization;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class dynamicUiElements : MonoBehaviour
+public class TimerText : MonoBehaviour
 {
     public GameManager gm;
     public Text timer;
