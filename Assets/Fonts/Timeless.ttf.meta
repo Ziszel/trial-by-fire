@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 1877ddeda6d92ccb4bb15ba39f6d06f2
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Timeless
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: f0ddaa91cbc6811a6a05074011280d19, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
