@@ -5,10 +5,9 @@ using UnityEngine.UI;
 
 public class DeathCount : MonoBehaviour
 {
-    public GameManager gm;
     public Text deathCount;
     void Update()
     {
-        deathCount.text = "Deaths: " + gm.deathCount;
+        deathCount.text = "Deaths: " + GameManager.deathCount;
     }
 }

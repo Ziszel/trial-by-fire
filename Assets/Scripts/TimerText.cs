@@ -5,14 +5,13 @@ using UnityEngine.UI;
 
 public class TimerText : MonoBehaviour
 {
-    public GameManager gm;
     public Text timer;
     // Update is called once per frame
     void Update()
     {
         // In order to convert a floating point number into a time the player can understand it must be converted into a TimeSpan object
         // https://learn.microsoft.com/en-us/dotnet/api/system.timespan.fromseconds?view=netframework-4.8
-        TimeSpan timeSpan = TimeSpan.FromSeconds(gm.timer);
+        TimeSpan timeSpan = TimeSpan.FromSeconds(GameManager.timer);
 
         // Simply calling timeSpan.ToString() will work, but lack proper formatting, following this documentation:
         // https://learn.microsoft.com/en-us/dotnet/api/system.timespan.tostring?view=net-7.0

@@ -10,8 +10,8 @@ public class GameManager : MonoBehaviour
     // In combination with the code inside of the Awake method, this is an example of the Singleton design pattern.
     public static GameManager Instance;
     
-    public float timer = 0.0f;
-    public int deathCount = 0;
+    public static float timer = 0.0f;
+    public static int deathCount = 0;
     private float sceneDelay = 2.0f;
 
     private void Awake()
