@@ -13,9 +13,12 @@ public class GameManager : MonoBehaviour
     public static float timer = 0.0f;
     public static int deathCount = 0;
     private float sceneDelay = 2.0f;
+    Camera m_MainCamera;
 
     private void Awake()
     {
+        m_MainCamera = Camera.main;
+        m_MainCamera.enabled = true;
         // If we already have an Instance, we don't want another gameObject.
         // This stops duplication on reloading of the scene
         if (Instance != null)
@@ -23,7 +26,7 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-        
+
         Instance = this;
         DontDestroyOnLoad(gameObject); // don't destroy the empty game object when loading a new scene
     }
@@ -31,8 +34,6 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         timer += Time.deltaTime;
-        Debug.Log(timer);
-        Debug.Log(deathCount);
     }
 
     public void EndGame()
