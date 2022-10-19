@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class cameraActivation : MonoBehaviour
+public class CameraActivation : MonoBehaviour
 {
     public Camera localCamera;
     
