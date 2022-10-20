@@ -35,7 +35,15 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        timer += Time.deltaTime;
+        if (SceneManager.GetActiveScene().name == "Level1")
+        {
+            timer += Time.deltaTime;
+        }
+        else if (SceneManager.GetActiveScene().name == "level2")
+        {
+            
+        }
+        
     }
 
     public void EndGame()
@@ -57,5 +65,10 @@ public class GameManager : MonoBehaviour
         deathCount++;
         timer = 0.0f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void Reset()
+    {
+        SceneManager.LoadScene("Level1");
     }
 }
