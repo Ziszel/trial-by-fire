@@ -9,8 +9,10 @@ public class GameManager : MonoBehaviour
     // I've used this to persist the deathCount variable when reloading the scene after dying
     // In combination with the code inside of the Awake method, this is an example of the Singleton design pattern.
     public static GameManager Instance;
-    
+    public Player player;
+
     public static float timer = 0.0f;
+    public static float bestTime;
     public static int deathCount = 0;
     private float sceneDelay = 2.0f;
     Camera m_MainCamera;
@@ -39,6 +41,8 @@ public class GameManager : MonoBehaviour
     public void EndGame()
     {
         Debug.Log("You Won!");
+        player.setMove(false);
+        bestTime = timer;
         Invoke("EndGameScene", sceneDelay);
     }
 
