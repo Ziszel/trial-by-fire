@@ -24,12 +24,13 @@ public class EndScreen : MonoBehaviour
     private void Update()
     {
         // If the camera has finished moving past the door, then draw the EndScreen
-        if (camera.position.z > 0)
+        if (camera.position.z > 2)
         {
             endMessage.enabled = true;
             timer.enabled = true;
             deathCount.enabled = true;
             btn.enabled = true;
+            btn.image.enabled = true;
             btnText.enabled = true;
         }
     }

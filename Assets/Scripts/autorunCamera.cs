@@ -9,7 +9,7 @@ public class autorunCamera : MonoBehaviour
     private void Update()
     {
         // Make the camera stop moving
-        if (camera.position.z < 0)
+        if (camera.position.z < 2)
         {
             // move camera forward at increasing speed until past the door
             transform.Translate(0.0f, 0.0f, speed * Time.deltaTime);
