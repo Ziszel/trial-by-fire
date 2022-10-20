@@ -1,11 +1,13 @@
+using System;
 using UnityEngine;
 
-public class cameraActivation : MonoBehaviour
+public class CameraActivation : MonoBehaviour
 {
     public Camera localCamera;
-    
+
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log(Camera.main);
         localCamera.enabled = true;
     }
     
