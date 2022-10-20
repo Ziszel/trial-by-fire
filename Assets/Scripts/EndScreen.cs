@@ -1,5 +1,5 @@
 using System;
-using Unity.VisualScripting;
+using System.Globalization;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,8 +14,10 @@ public class EndScreen : MonoBehaviour
 
     private void Awake()
     {
+        TimeSpan timeSpan = TimeSpan.FromSeconds(GameManager.bestTime);
+        
         deathCount.text = "Deaths: " + GameManager.deathCount;
-        timer.text = "BestTime: " + GameManager.bestTime;
+        timer.text = "BestTime: " + timeSpan.ToString("hh':'mm':'ss", new CultureInfo("en-GB"));
         btn.onClick.AddListener(OnPlayAgainClick);
     }
 
