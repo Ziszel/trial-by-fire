@@ -77,6 +77,5 @@ public class GameManager : MonoBehaviour
         timer = 0.0f;
         stopTimer = false;
         SceneManager.LoadScene("Level1");
-        
     }
 }

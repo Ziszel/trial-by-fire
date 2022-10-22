@@ -2,6 +2,7 @@ using System;
 using System.Globalization;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class EndScreen : MonoBehaviour
 {
@@ -42,6 +43,6 @@ public class EndScreen : MonoBehaviour
 
     void OnPlayAgainClick()
     {
-        FindObjectOfType<GameManager>().Reset();
+        SceneManager.LoadScene("MainMenu");
     }
 }
