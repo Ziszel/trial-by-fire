@@ -3,10 +3,16 @@ using UnityEngine;
 public class doorRotate : MonoBehaviour
 {
     public Transform pivotPoint;
+
+    public Transform camera;
     // Update is called once per frame
     void Update()
     {
-        RotateAroundPoint();
+        // Make the door stop rotating once the camera is past it
+        if (camera.position.z < 0)
+        {
+            RotateAroundPoint();
+        }
     }
 
     void RotateAroundPoint()
