@@ -14,7 +14,7 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
         // store movement
         // The below comment I used in combination with the Unity documentation: https://docs.unity3d.com/ScriptReference/index.html
