@@ -11,6 +11,7 @@ public class EndScreen : MonoBehaviour
     public Text btnText;
     public Transform camera;
     public Button btn;
+    public AudioSource music;
 
     private void Awake()
     {
@@ -32,6 +33,10 @@ public class EndScreen : MonoBehaviour
             btn.enabled = true;
             btn.image.enabled = true;
             btnText.enabled = true;
+            if (!music.isPlaying)
+            {
+                music.Play();
+            }
         }
     }
 
