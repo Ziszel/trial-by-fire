@@ -325,7 +325,7 @@ MonoBehaviour:
   deathCount: {fileID: 459266907}
   endMessage: {fileID: 1150141193}
   btnText: {fileID: 173805289}
-  camera: {fileID: 1104179022}
+  sceneCamera: {fileID: 1104179022}
   btn: {fileID: 2006123471}
   music: {fileID: 227045500}
 --- !u!82 &227045500
@@ -439,6 +439,10 @@ PrefabInstance:
       propertyPath: pivotPoint
       value: 
       objectReference: {fileID: 1928381966}
+    - target: {fileID: 8340937394662613005, guid: d55299fd7d3d58cc4a4cc067f31c3b86, type: 3}
+      propertyPath: sceneCamera
+      value: 
+      objectReference: {fileID: 1104179022}
     - target: {fileID: 8379597069360187362, guid: d55299fd7d3d58cc4a4cc067f31c3b86, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -828,7 +832,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 075610e2fc3e113558930c7209c2cf3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camera: {fileID: 1104179022}
+  sceneCamera: {fileID: 1104179022}
 --- !u!1 &1150141191
 GameObject:
   m_ObjectHideFlags: 0
