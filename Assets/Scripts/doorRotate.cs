@@ -4,12 +4,12 @@ public class doorRotate : MonoBehaviour
 {
     public Transform pivotPoint;
 
-    public Transform camera;
+    public Transform sceneCamera;
     // Update is called once per frame
     void Update()
     {
         // Make the door stop rotating once the camera is past it
-        if (camera.position.z < 0)
+        if (sceneCamera.position.z < 0)
         {
             RotateAroundPoint();
         }

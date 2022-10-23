@@ -1,5 +1,7 @@
 using UnityEngine.SceneManagement;
-using UnityEngine;using UnityEngine.UI;
+using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class MainMenuManager : MonoBehaviour
 {
@@ -8,8 +10,7 @@ public class MainMenuManager : MonoBehaviour
     public Button languageBtn;
     public Text languageBtnText;
     public Text titleText;
-    public Image playImage;
-    public Image languageImage;
+    public EventSystem eventSystem;
     private static string language;
     //private Color currentColour = new Color(192, 77, 34, 0);
 
@@ -42,7 +43,7 @@ public class MainMenuManager : MonoBehaviour
         }*/
         
         //ActivateButtons();
-        
+
         languageBtnText.text = language;
     }
 
@@ -52,10 +53,8 @@ public class MainMenuManager : MonoBehaviour
         {
             playBtn.enabled = true;
             playBtnText.enabled = true;
-            playImage.enabled = true;
             languageBtn.enabled = true;
             languageBtnText.enabled = true;
-            languageImage.enabled = true;
         }
     }
 
@@ -66,13 +65,18 @@ public class MainMenuManager : MonoBehaviour
 
     void OnPlayClick()
     {
-        Debug.Log("are you doing anything?");
-        SceneManager.LoadScene("Level1");
+        if (GameManager.Instance == null)
+        {
+            SceneManager.LoadScene("Level1");
+        }
+        else
+        {
+            FindObjectOfType<GameManager>().Reset();
+        }
     }
     
     void OnLanguageClick()
     {
-        Debug.Log("are you doing anything?");
         if (language.Equals("English"))
         {
             language = "Mandarin";
@@ -81,6 +85,12 @@ public class MainMenuManager : MonoBehaviour
         {
             language = "English";
         }
+        
+        // https://answers.unity.com/questions/883220/how-to-change-selected-button-in-eventsystem-or-de.html
+        // The 'selected' property of a button cannot be manipulated through the button itself.
+        // Because I'm calling this when the language button is clicked, it will always deselect the right thing.
+        // What this looks like in-game is that the button bg colour will fade out instantly after clicking
+        eventSystem.GetComponent<UnityEngine.EventSystems.EventSystem>().SetSelectedGameObject(null);
     }
 }
 

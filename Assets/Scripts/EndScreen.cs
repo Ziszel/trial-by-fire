@@ -10,7 +10,7 @@ public class EndScreen : MonoBehaviour
     public Text deathCount;
     public Text endMessage;
     public Text btnText;
-    public Transform camera;
+    public Transform sceneCamera;
     public Button btn;
     public AudioSource music;
 
@@ -26,7 +26,7 @@ public class EndScreen : MonoBehaviour
     private void Update()
     {
         // If the camera has finished moving past the door, then draw the EndScreen
-        if (camera.position.z > 2)
+        if (sceneCamera.position.z > 2)
         {
             endMessage.enabled = true;
             timer.enabled = true;

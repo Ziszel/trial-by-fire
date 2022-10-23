@@ -9,9 +9,7 @@ public class GameManager : MonoBehaviour
     // I've used this to persist the deathCount variable when reloading the scene after dying
     // In combination with the code inside of the Awake method, this is an example of the Singleton design pattern.
     public static GameManager Instance;
-    public MusicController music;
     public Player player;
-
     public static float timer = 0.0f;
     public static float bestTime;
     public static int deathCount = 0;
@@ -21,8 +19,8 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        m_MainCamera = Camera.main;
-        m_MainCamera.enabled = true;
+        //m_MainCamera = Camera.main;
+        //m_MainCamera.enabled = true;
         // If we already have an Instance, we don't want another gameObject.
         // This stops duplication on reloading of the scene
         if (Instance != null)
@@ -75,6 +73,7 @@ public class GameManager : MonoBehaviour
     public void Reset()
     {
         timer = 0.0f;
+        deathCount = 0;
         stopTimer = false;
         SceneManager.LoadScene("Level1");
     }
