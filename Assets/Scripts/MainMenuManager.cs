@@ -10,17 +10,18 @@ public class MainMenuManager : MonoBehaviour
     public Text titleText;
     public Image playImage;
     public Image languageImage;
-    private static string language = "English";
-    private Color currentColour = new Color(192, 77, 34, 0);
+    private static string language;
+    //private Color currentColour = new Color(192, 77, 34, 0);
 
     private void Awake()
     {
         playBtn.onClick.AddListener(OnPlayClick);
         languageBtn.onClick.AddListener(OnLanguageClick);
-        playBtn.enabled = false;
-        playBtnText.enabled = false;
-        languageBtn.enabled = false;
-        languageBtnText.enabled = false;
+        language = "English";
+        //playBtn.enabled = false;
+        //playBtnText.enabled = false;
+        //languageBtn.enabled = false;
+        //languageBtnText.enabled = false;
         //titleText.color = currentColour;
     }
 
@@ -40,7 +41,7 @@ public class MainMenuManager : MonoBehaviour
             ActivateButtons();
         }*/
         
-        ActivateButtons();
+        //ActivateButtons();
         
         languageBtnText.text = language;
     }
@@ -65,11 +66,13 @@ public class MainMenuManager : MonoBehaviour
 
     void OnPlayClick()
     {
+        Debug.Log("are you doing anything?");
         SceneManager.LoadScene("Level1");
     }
     
     void OnLanguageClick()
     {
+        Debug.Log("are you doing anything?");
         if (language.Equals("English"))
         {
             language = "Mandarin";
