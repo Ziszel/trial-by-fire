@@ -13,6 +13,8 @@ public class EndScreen : MonoBehaviour
     public Transform sceneCamera;
     public Button btn;
     public AudioSource music;
+    public AudioSource doorSlam;
+    private int playCount = 0;
 
     private void Awake()
     {
@@ -25,8 +27,13 @@ public class EndScreen : MonoBehaviour
 
     private void Update()
     {
+        if (sceneCamera.position.z > 2 && playCount < 1)
+        {
+            doorSlam.Play();
+            playCount++;
+        }
         // If the camera has finished moving past the door, then draw the EndScreen
-        if (sceneCamera.position.z > 2)
+        if (sceneCamera.position.z > 2 && !doorSlam.isPlaying)
         {
             endMessage.enabled = true;
             timer.enabled = true;
