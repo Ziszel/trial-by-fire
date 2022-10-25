@@ -6,6 +6,6 @@ public class DeathCount : MonoBehaviour
     public Text deathCount;
     void Update()
     {
-        deathCount.text = "Deaths: " + GameManager.deathCount;
+        deathCount.text = (MainMenuManager.language == "English") ? "Deaths: " + GameManager.deathCount : "死亡人数: " + GameManager.deathCount;
     }
 }

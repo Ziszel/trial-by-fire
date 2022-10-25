@@ -5308,6 +5308,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1172743924}
+  deathCountText: {fileID: 1167459661}
 --- !u!1001 &853484577
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8801,7 +8802,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.1636328, g: 0.6603774, b: 0.109024554, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -8809,7 +8810,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 1877ddeda6d92ccb4bb15ba39f6d06f2, type: 3}
+    m_Font: {fileID: 12800000, guid: d17c1794038db807fbffbad3b48e1a61, type: 3}
     m_FontSize: 26
     m_FontStyle: 0
     m_BestFit: 0
@@ -9267,7 +9268,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.08870943, g: 0.2924528, b: 0.07035421, a: 1}
+  m_Color: {r: 0.19435644, g: 0.6509434, b: 0.15045391, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

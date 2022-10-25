@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -19,8 +20,6 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        //m_MainCamera = Camera.main;
-        //m_MainCamera.enabled = true;
         // If we already have an Instance, we don't want another gameObject.
         // This stops duplication on reloading of the scene
         if (Instance != null)
