@@ -11,7 +11,7 @@ public class MainMenuManager : MonoBehaviour
     public Text languageBtnText;
     public Text titleText;
     public EventSystem eventSystem;
-    private static string language;
+    public static string language;
     //private Color currentColour = new Color(192, 77, 34, 0);
 
     private void Awake()
@@ -43,8 +43,6 @@ public class MainMenuManager : MonoBehaviour
         }*/
         
         //ActivateButtons();
-
-        languageBtnText.text = language;
     }
 
     void ActivateButtons()
@@ -79,13 +77,15 @@ public class MainMenuManager : MonoBehaviour
     {
         if (language.Equals("English"))
         {
-            language = "Mandarin";
+            language = "中文";
+            playBtnText.text = "玩";
         }
-        else if (language.Equals("Mandarin"))
+        else if (language.Equals("中文"))
         {
             language = "English";
+            playBtnText.text = "Play";
         }
-        
+        languageBtnText.text = language;
         // https://answers.unity.com/questions/883220/how-to-change-selected-button-in-eventsystem-or-de.html
         // The 'selected' property of a button cannot be manipulated through the button itself.
         // Because I'm calling this when the language button is clicked, it will always deselect the right thing.

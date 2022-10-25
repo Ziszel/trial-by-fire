@@ -19,10 +19,14 @@ public class EndScreen : MonoBehaviour
     private void Awake()
     {
         TimeSpan timeSpan = TimeSpan.FromSeconds(GameManager.bestTime);
-        
-        deathCount.text = "Deaths: " + GameManager.deathCount;
-        timer.text = "BestTime: " + timeSpan.ToString("hh':'mm':'ss", new CultureInfo("en-GB"));
-        btn.onClick.AddListener(OnPlayAgainClick);
+        deathCount.text = (MainMenuManager.language == "English")
+            ? "Deaths: " + GameManager.deathCount
+            : "死亡人数: " + GameManager.deathCount;
+        timer.text = (MainMenuManager.language == "English")
+            ? "BestTime: " + timeSpan.ToString("hh':'mm':'ss", new CultureInfo("en-GB"))
+            : "时间: " + timeSpan.ToString("hh':'mm':'ss", new CultureInfo("en-GB"));
+            btn.onClick.AddListener(OnPlayAgainClick);
+        UpdateEndMessageLanguage();
     }
 
     private void Update()
@@ -45,6 +49,24 @@ public class EndScreen : MonoBehaviour
             {
                 music.Play();
             }
+        }
+    }
+
+    void UpdateEndMessageLanguage()
+    {
+        if (MainMenuManager.language == "English")
+        {
+            endMessage.text = @"Congratulations, you escaped your Trial by Fire!
+            
+            However; for setting that factory ablaze, you will have to contend with a Trial by Law!";
+            btnText.text = "Play again?";
+        }
+        else
+        {
+            endMessage.text = @"恭喜，你逃脱了火之试炼!
+            
+            然而; 放火烧那家工厂，你将不得不接受法律审判";
+            btnText.text = "再玩一遍?";
         }
     }
 
