@@ -577,7 +577,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 1000
+  far clip plane: 200
   field of view: 59.2
   orthographic: 0
   orthographic size: 5
@@ -749,7 +749,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 1000
+  far clip plane: 50
   field of view: 59.2
   orthographic: 0
   orthographic size: 5
@@ -4344,7 +4344,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 1000
+  far clip plane: 150
   field of view: 80.7
   orthographic: 0
   orthographic size: 5
@@ -5308,7 +5308,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1172743924}
-  deathCountText: {fileID: 1167459661}
 --- !u!1001 &853484577
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6189,7 +6188,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.1
-  far clip plane: 1500
+  far clip plane: 50
   field of view: 110.2
   orthographic: 0
   orthographic size: 5
@@ -6906,7 +6905,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 1000
+  far clip plane: 150
   field of view: 80.7
   orthographic: 0
   orthographic size: 5
@@ -8619,7 +8618,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 1000
+  far clip plane: 100
   field of view: 80.7
   orthographic: 0
   orthographic size: 5
@@ -9182,7 +9181,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 1000
+  far clip plane: 200
   field of view: 59.2
   orthographic: 0
   orthographic size: 5
@@ -10798,7 +10797,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 1000
+  far clip plane: 200
   field of view: 42.2
   orthographic: 0
   orthographic size: 5
@@ -13189,7 +13188,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 1000
+  far clip plane: 50
   field of view: 59.2
   orthographic: 0
   orthographic size: 5
@@ -14304,7 +14303,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 1000
+  far clip plane: 150
   field of view: 80.7
   orthographic: 0
   orthographic size: 5
