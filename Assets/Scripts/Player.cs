@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    private float force = 24.0f;
+    private float force = 50.0f;
     private float rotationSpeed = 50.0f;
     private Rigidbody rb;
     private bool canMove = true;
