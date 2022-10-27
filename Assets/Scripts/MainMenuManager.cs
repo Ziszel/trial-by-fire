@@ -26,8 +26,8 @@ public class MainMenuManager : MonoBehaviour
         //titleText.color = currentColour;
     }
 
-    private void Update()
-    {
+    //private void Update()
+    //{
         // I think this should work, the values are correct but Unity forces the text to be white. For now, no fade in!
         /*if (titleText.color.a != 255)
         {
@@ -43,7 +43,7 @@ public class MainMenuManager : MonoBehaviour
         }*/
         
         //ActivateButtons();
-    }
+    //}
 
     void ActivateButtons()
     {

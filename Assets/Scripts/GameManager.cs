@@ -16,7 +16,6 @@ public class GameManager : MonoBehaviour
     public static int deathCount = 0;
     private float sceneDelay = 2.0f;
     private bool stopTimer;
-    Camera m_MainCamera;
 
     private void Awake()
     {
