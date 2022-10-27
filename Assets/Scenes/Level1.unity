@@ -582,11 +582,11 @@ GameObject:
   - component: {fileID: 112977148}
   m_Layer: 0
   m_Name: Camera 3
-  m_TagString: MainCamera
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!20 &112977148
 Camera:
   m_ObjectHideFlags: 0
@@ -615,7 +615,7 @@ Camera:
   field of view: 59.2
   orthographic: 0
   orthographic size: 5
-  m_Depth: 2
+  m_Depth: 7
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -754,11 +754,11 @@ GameObject:
   - component: {fileID: 115884759}
   m_Layer: 0
   m_Name: Camera 2
-  m_TagString: MainCamera
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!20 &115884759
 Camera:
   m_ObjectHideFlags: 0
@@ -787,7 +787,7 @@ Camera:
   field of view: 59.2
   orthographic: 0
   orthographic size: 5
-  m_Depth: 3
+  m_Depth: 8
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -4642,11 +4642,11 @@ GameObject:
   - component: {fileID: 740297278}
   m_Layer: 0
   m_Name: Camera 10
-  m_TagString: MainCamera
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!20 &740297278
 Camera:
   m_ObjectHideFlags: 0
@@ -4675,7 +4675,7 @@ Camera:
   field of view: 54.043163
   orthographic: 0
   orthographic size: 5
-  m_Depth: -5
+  m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -5975,7 +5975,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4da071af978f820daf430ab8507cf84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  localCamera: {fileID: 1236077759}
+  localCamera: {fileID: 0}
 --- !u!65 &912939852
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6702,7 +6702,7 @@ GameObject:
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
   m_Layer: 0
-  m_Name: MainCamera
+  m_Name: Camera 1
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6744,7 +6744,7 @@ Camera:
   field of view: 110.2
   orthographic: 0
   orthographic size: 5
-  m_Depth: 4
+  m_Depth: 1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -6767,7 +6767,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: -0.12373718, y: 0.8589218, z: -0.3408583, w: -0.36160472}
-  m_LocalPosition: {x: 0.361, y: 10.51, z: 0.5000001}
+  m_LocalPosition: {x: 0.35, y: 10.5, z: 0.5}
   m_LocalScale: {x: 0.050863676, y: 0.5024781, z: 0.05347805}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6884,7 +6884,7 @@ GameObject:
   - component: {fileID: 970133415}
   m_Layer: 0
   m_Name: TriggerZone Cam 2
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6930,7 +6930,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4da071af978f820daf430ab8507cf84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  localCamera: {fileID: 115884759}
+  localCamera: {fileID: 963194227}
 --- !u!1001 &972644071
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7428,11 +7428,11 @@ GameObject:
   - component: {fileID: 994919726}
   m_Layer: 0
   m_Name: Camera 8
-  m_TagString: MainCamera
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!20 &994919726
 Camera:
   m_ObjectHideFlags: 0
@@ -7461,7 +7461,7 @@ Camera:
   field of view: 80.7
   orthographic: 0
   orthographic size: 5
-  m_Depth: -3
+  m_Depth: 2
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -7926,7 +7926,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4da071af978f820daf430ab8507cf84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  localCamera: {fileID: 112977148}
+  localCamera: {fileID: 0}
 --- !u!65 &1039634392
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8590,7 +8590,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4da071af978f820daf430ab8507cf84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  localCamera: {fileID: 1933049852}
+  localCamera: {fileID: 0}
 --- !u!65 &1121212009
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8650,7 +8650,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4da071af978f820daf430ab8507cf84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  localCamera: {fileID: 1520314467}
+  localCamera: {fileID: 0}
 --- !u!65 &1124048032
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9002,7 +9002,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4da071af978f820daf430ab8507cf84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  localCamera: {fileID: 2090416830}
+  localCamera: {fileID: 0}
 --- !u!65 &1156002664
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9141,11 +9141,11 @@ GameObject:
   - component: {fileID: 1159241506}
   m_Layer: 0
   m_Name: Camera 9
-  m_TagString: MainCamera
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!20 &1159241506
 Camera:
   m_ObjectHideFlags: 0
@@ -9174,7 +9174,7 @@ Camera:
   field of view: 80.7
   orthographic: 0
   orthographic size: 5
-  m_Depth: -4
+  m_Depth: 1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -9704,11 +9704,11 @@ GameObject:
   - component: {fileID: 1236077759}
   m_Layer: 0
   m_Name: Camera 5
-  m_TagString: MainCamera
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!20 &1236077759
 Camera:
   m_ObjectHideFlags: 0
@@ -9737,7 +9737,7 @@ Camera:
   field of view: 59.2
   orthographic: 0
   orthographic size: 5
-  m_Depth: 0
+  m_Depth: 5
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -11139,7 +11139,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4da071af978f820daf430ab8507cf84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  localCamera: {fileID: 740297278}
+  localCamera: {fileID: 0}
 --- !u!65 &1411611776
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11167,7 +11167,7 @@ Transform:
   m_Children:
   - {fileID: 740297279}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 90.297, z: 0}
 --- !u!1 &1436172036
 GameObject:
@@ -11804,7 +11804,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1505820851
 MonoBehaviour:
@@ -11927,11 +11927,11 @@ GameObject:
   - component: {fileID: 1520314467}
   m_Layer: 0
   m_Name: Camera 6
-  m_TagString: MainCamera
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!20 &1520314467
 Camera:
   m_ObjectHideFlags: 0
@@ -11960,7 +11960,7 @@ Camera:
   field of view: 42.2
   orthographic: 0
   orthographic size: 5
-  m_Depth: -1
+  m_Depth: 4
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -12801,7 +12801,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4da071af978f820daf430ab8507cf84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  localCamera: {fileID: 1159241506}
+  localCamera: {fileID: 0}
 --- !u!65 &1665564790
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13040,7 +13040,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1718908398
 Transform:
   m_ObjectHideFlags: 0
@@ -13827,7 +13827,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4da071af978f820daf430ab8507cf84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  localCamera: {fileID: 994919726}
+  localCamera: {fileID: 0}
 --- !u!65 &1814212384
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14643,11 +14643,11 @@ GameObject:
   - component: {fileID: 1933049852}
   m_Layer: 0
   m_Name: Camera 4
-  m_TagString: MainCamera
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!20 &1933049852
 Camera:
   m_ObjectHideFlags: 0
@@ -14676,7 +14676,7 @@ Camera:
   field of view: 59.2
   orthographic: 0
   orthographic size: 5
-  m_Depth: 1
+  m_Depth: 6
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -15792,11 +15792,11 @@ GameObject:
   - component: {fileID: 2090416830}
   m_Layer: 0
   m_Name: Camera 7
-  m_TagString: MainCamera
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!20 &2090416830
 Camera:
   m_ObjectHideFlags: 0
@@ -15825,7 +15825,7 @@ Camera:
   field of view: 80.7
   orthographic: 0
   orthographic size: 5
-  m_Depth: -2
+  m_Depth: 3
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
