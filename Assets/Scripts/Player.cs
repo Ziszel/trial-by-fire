@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    private float force = 50.0f;
+    private float force = 24.0f;
     private float rotationSpeed = 50.0f;
     private Rigidbody rb;
     private bool canMove = true;
@@ -27,11 +27,14 @@ public class Player : MonoBehaviour
 
             if (zMovement > 0)
             {
+                // Adds the ability for the player to run!
+                force = (Input.GetKey(KeyCode.LeftShift)) ? force = 50.0f : force = 24.0f;
                 // transform.forward allows for forward movement dependant on rotation of object
                 rb.velocity = transform.forward * force;
             }
             else if (zMovement < 0)
             {
+                force = (Input.GetKey(KeyCode.LeftShift)) ? force = 50.0f : force = 24.0f;
                 rb.velocity = -transform.forward * force;
             }
 

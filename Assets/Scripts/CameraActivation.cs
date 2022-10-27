@@ -1,6 +1,4 @@
-using System;
 using UnityEngine;
-using UnityEngine.Experimental.GlobalIllumination;
 
 public class CameraActivation : MonoBehaviour
 {
@@ -8,13 +6,18 @@ public class CameraActivation : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        //Debug.Log(localCamera.name);
-        //localCamera.enabled = true;
+        // The previous method of 'moving the camera' was to actually have multiple cameras for each different angle that I wanted captured.
+        // Unfortunately this resulted in severe lag that made the game unplayable.
+        // I devised the below method to move a single camera around to a location dependant on the object (ref by name) that has been entered
         switch (name)
         {
             case "TriggerZone Cam 1":
+                // setCameraPosRot takes in all the values that I care about:
+                // x, y, z position
+                // x, y, z rotation
+                // depthOfField
+                // clip distance far (how long to draw before no longer rendering)
                 setCameraPosRot(localCamera, 7.6f, 10.5f, -14, 42.4f, 226.6f, 2.6f, 110.2f, 50.0f);
-                Debug.Log("updated camera");
                 break;
             case "TriggerZone Cam 2":
                 setCameraPosRot(localCamera, 0.05f, 22.0f, 0.06f, 87.3f, 299.2f, 29.0f, 59.2f, 50.0f);
@@ -46,17 +49,13 @@ public class CameraActivation : MonoBehaviour
             default:
                 break;
         }
-        
     }
-    
-    /*private void OnTriggerExit(Collider other)
-    {
-        localCamera.enabled = false;
-    }*/
 
     void setCameraPosRot(Camera camera, float px, float py, float pz, float rx, float ry, float rz, float depthOfField, float clipFar)
     {
+        // position updates the camera by world position
         camera.transform.position = new Vector3(px, py, pz);
+        // Quaternion.Euler rotates the object around itself (x co-ords around the x axis, etc...)
         camera.transform.rotation = Quaternion.Euler(rx, ry, rz);
         camera.fieldOfView = depthOfField;
         camera.farClipPlane = clipFar;
