@@ -29,10 +29,10 @@ public class CameraActivation : MonoBehaviour
                 setCameraPosRot(localCamera, -102.5f, 27.9f, 56.2f, 23.6f, 110.2f, 0.0f, 59.2f, 200.0f);
                 break;
             case "TriggerZone Cam 6":
-                setCameraPosRot(localCamera, -0.74f, 1.72f, -0.49f, 13.4f, 56.8f, -1.41f, 42.2f, 200.0f);
+                setCameraPosRot(localCamera, -136.4f, 0.17f, 25.7f, -14.5f, 57.5f, -1.41f, 42.2f, 200.0f);
                 break;
             case "TriggerZone Cam 7":
-                setCameraPosRot(localCamera, -0.38f, 2.6f, -0.43f, -20f, 35f, 0.0f, 59.2f, 150.0f);
+                setCameraPosRot(localCamera, -128.74f, 2.25f, 26.08f, -17f, 325f, 0.0f, 80.7f, 150.0f);
                 break;
             case "TriggerZone Cam 8":
                 setCameraPosRot(localCamera, 1.32f, 33.2f, -0.43f, 20.0f, -57.9f, 0.0f, 59.2f, 150.0f);
