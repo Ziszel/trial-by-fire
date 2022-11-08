@@ -7,11 +7,11 @@ public class TimerText : MonoBehaviour
 {
     public Text timer;
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         // In order to convert a floating point number into a time the player can understand it must be converted into a TimeSpan object
         // https://learn.microsoft.com/en-us/dotnet/api/system.timespan.fromseconds?view=netframework-4.8
-        TimeSpan timeSpan = TimeSpan.FromSeconds(GameManager.timer);
+        TimeSpan timeSpan = TimeSpan.FromSeconds(GameManager.Timer);
 
         // Simply calling timeSpan.ToString() will work, but lack proper formatting, following this documentation:
         // https://learn.microsoft.com/en-us/dotnet/api/system.timespan.tostring?view=net-7.0
@@ -23,6 +23,5 @@ public class TimerText : MonoBehaviour
         // in combination with this page: "https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-lcid/a9eac961-e77d-41a6-90a5-ce1a8b0cdb9c"
         // means I'm able to see that the culture code I want is 'en-GB'. 
         timer.text = timeSpan.ToString("hh':'mm':'ss", new CultureInfo("en-GB"));
-
     }
 }

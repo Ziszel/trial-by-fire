@@ -1,7 +1,5 @@
-using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -11,18 +9,19 @@ public class GameManager : MonoBehaviour
     // In combination with the code inside of the Awake method, this is an example of the Singleton design pattern.
     public static GameManager Instance;
     public Player player;
-    public static float timer = 0.0f;
-    public static float bestTime;
-    public static int deathCount = 0;
-    private float sceneDelay = 2.0f;
-    private bool stopTimer;
-
+    public static float Timer = 0.0f;
+    public static float BestTime;
+    public static int DeathCount = 0;
+    private const float SceneDelay = 2.0f;
+    private bool _stopTimer;
+    
     private void Awake()
     {
         // If we already have an Instance, we don't want another gameObject.
         // This stops duplication on reloading of the scene
         if (Instance != null)
         {
+            // We already have an instance so destroy the newly created one.
             Destroy(gameObject);
             return;
         }
@@ -36,23 +35,18 @@ public class GameManager : MonoBehaviour
         if (SceneManager.GetActiveScene().name == "Level1")
         {
             // neaten up the display when you finish a level
-            if (!stopTimer) { timer += Time.deltaTime; }
+            if (!_stopTimer) { Timer += Time.deltaTime; }
         }
-        /*else if (SceneManager.GetActiveScene().name == "level2")
-        {
-            // do nothing
-        }
-        */
     }
 
     public void EndGame()
     {
-        Debug.Log("You Won!");
-        player.setMove(false);
-        bestTime = timer;
-        stopTimer = true;
+        player.SetMove(false); // stop the player from moving
+        // make the final time (bestTime) = to the current time and stop the timer and music.
+        BestTime = Timer;
+        _stopTimer = true;
         FindObjectOfType<MusicController>().FadeAudio();
-        Invoke("EndGameScene", sceneDelay);
+        Invoke("EndGameScene", SceneDelay); // Call the EndGameScene, delayed by sceneDelay
     }
 
     private void EndGameScene()
@@ -62,17 +56,19 @@ public class GameManager : MonoBehaviour
 
     public void Die()
     {
-        Debug.Log("you died!");
-        deathCount++;
-        timer = 0.0f;
+        // When the player dies increment the death count, reset the timer and reload the scene
+        DeathCount++;
+        Timer = 0.0f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void Reset()
     {
-        timer = 0.0f;
-        deathCount = 0;
-        stopTimer = false;
+        // The same as 'Die', but this method will reset the death count and restart the timer
+        // Level1 alludes to this scene, but this method is safe to call from other scenes because it is explicit
+        Timer = 0.0f;
+        DeathCount = 0;
+        _stopTimer = false;
         SceneManager.LoadScene("Level1");
     }
 }

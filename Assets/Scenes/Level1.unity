@@ -6223,8 +6223,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc7ac4bf83f82cb63bdbc5ed0dfa253c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Instance: {fileID: 0}
-  audio: {fileID: 1104670578}
+  audioSource: {fileID: 1104670578}
 --- !u!82 &1104670578
 AudioSource:
   m_ObjectHideFlags: 0

@@ -4,8 +4,8 @@ using UnityEngine.UI;
 public class DeathCount : MonoBehaviour
 {
     public Text deathCount;
-    void Update()
+    private void Update()
     {
-        deathCount.text = (MainMenuManager.language == "English") ? "Deaths: " + GameManager.deathCount : "死亡人数: " + GameManager.deathCount;
+        deathCount.text = (MainMenuManager.Language == "English") ? "Deaths: " + GameManager.DeathCount : "死亡人数: " + GameManager.DeathCount;
     }
 }

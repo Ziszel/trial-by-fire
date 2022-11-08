@@ -14,29 +14,32 @@ public class EndScreen : MonoBehaviour
     public Button btn;
     public AudioSource music;
     public AudioSource doorSlam;
-    private int playCount = 0;
+    private int _playCount = 0;
 
     private void Awake()
     {
-        TimeSpan timeSpan = TimeSpan.FromSeconds(GameManager.bestTime);
-        deathCount.text = (MainMenuManager.language == "English")
-            ? "Deaths: " + GameManager.deathCount
-            : "死亡人数: " + GameManager.deathCount;
-        timer.text = (MainMenuManager.language == "English")
+        // Get a timeSpan object based off of the GameManager variable BestTime.
+        TimeSpan timeSpan = TimeSpan.FromSeconds(GameManager.BestTime);
+        // Update deathCount and timer buttons with the relevant information from the last playthrough.
+        deathCount.text = (MainMenuManager.Language == "English")
+            ? "Deaths: " + GameManager.DeathCount
+            : "死亡人数: " + GameManager.DeathCount;
+        timer.text = (MainMenuManager.Language == "English")
             ? "BestTime: " + timeSpan.ToString("hh':'mm':'ss", new CultureInfo("en-GB"))
             : "时间: " + timeSpan.ToString("hh':'mm':'ss", new CultureInfo("en-GB"));
-            btn.onClick.AddListener(OnPlayAgainClick);
-        UpdateEndMessageLanguage();
+            btn.onClick.AddListener(OnPlayAgainClick); // add a new listener for the button.
+        UpdateEndMessageLanguage(); // Update the large end message string so that it is in the correct language.
     }
 
     private void Update()
     {
-        if (sceneCamera.position.z > 2 && playCount < 1)
+        // If the camera has not yet passed the door, and we haven't played a door slam, play a doorslam sound
+        if (sceneCamera.position.z > 2 && _playCount < 1)
         {
             doorSlam.Play();
-            playCount++;
+            _playCount++; // update playCount by 1. This will ensure this if statement is not actioned again.
         }
-        // If the camera has finished moving past the door, then draw the EndScreen
+        // If the camera has finished moving past the door, and we've played the doorSlam, then draw the EndScreen.
         if (sceneCamera.position.z > 2 && !doorSlam.isPlaying)
         {
             endMessage.enabled = true;
@@ -45,16 +48,17 @@ public class EndScreen : MonoBehaviour
             btn.enabled = true;
             btn.image.enabled = true;
             btnText.enabled = true;
-            if (!music.isPlaying)
+            if (!music.isPlaying) // If we're not playing music, play music.
             {
                 music.Play();
             }
         }
     }
 
-    void UpdateEndMessageLanguage()
+    private void UpdateEndMessageLanguage()
     {
-        if (MainMenuManager.language == "English")
+        // depending on if the selected Language is in English or Chinese, update the endMessage and button text
+        if (MainMenuManager.Language == "English")
         {
             endMessage.text = @"Congratulations, you escaped your Trial by Fire!
             
@@ -70,7 +74,7 @@ public class EndScreen : MonoBehaviour
         }
     }
 
-    void OnPlayAgainClick()
+    private void OnPlayAgainClick()
     {
         SceneManager.LoadScene("MainMenu");
     }

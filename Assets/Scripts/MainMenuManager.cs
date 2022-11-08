@@ -9,59 +9,21 @@ public class MainMenuManager : MonoBehaviour
     public Text playBtnText;
     public Button languageBtn;
     public Text languageBtnText;
-    public Text titleText;
     public EventSystem eventSystem;
-    public static string language;
-    //private Color currentColour = new Color(192, 77, 34, 0);
+    public static string Language;
 
+    // Awake is called either when an active GameObject that contains the script is initialized when a Scene loads,
+    // or when a previously inactive GameObject is set to active, or after a GameObject created with
+    // Object.Instantiate is initialized. Use Awake to initialize variables or states before the application starts.
+    // https://docs.unity3d.com/ScriptReference/MonoBehaviour.Awake.html
     private void Awake()
     {
         playBtn.onClick.AddListener(OnPlayClick);
         languageBtn.onClick.AddListener(OnLanguageClick);
-        language = "English";
-        //playBtn.enabled = false;
-        //playBtnText.enabled = false;
-        //languageBtn.enabled = false;
-        //languageBtnText.enabled = false;
-        //titleText.color = currentColour;
+        Language = "English";
     }
 
-    //private void Update()
-    //{
-        // I think this should work, the values are correct but Unity forces the text to be white. For now, no fade in!
-        /*if (titleText.color.a != 255)
-        {
-            // A lerp stands for linear interpolation. Lerp is where we go from one value, to another, linearly as defined by a scale of time.
-            // It is often used in graphics, here I am using it to change from the colour of the menu text from having 0 alpha (invisible)
-            // to full alpha, therefore creating a fade in.
-            currentColour.a += Time.deltaTime;
-            titleText.color = currentColour;
-        }
-        else
-        {
-            ActivateButtons();
-        }*/
-        
-        //ActivateButtons();
-    //}
-
-    void ActivateButtons()
-    {
-        if (!playBtn.enabled)
-        {
-            playBtn.enabled = true;
-            playBtnText.enabled = true;
-            languageBtn.enabled = true;
-            languageBtnText.enabled = true;
-        }
-    }
-
-    string GetLanguage()
-    {
-        return language;
-    }
-
-    void OnPlayClick()
+    private void OnPlayClick()
     {
         if (GameManager.Instance == null)
         {
@@ -73,19 +35,19 @@ public class MainMenuManager : MonoBehaviour
         }
     }
     
-    void OnLanguageClick()
+    private void OnLanguageClick()
     {
-        if (language.Equals("English"))
+        if (Language.Equals("English"))
         {
-            language = "中文";
+            Language = "中文";
             playBtnText.text = "玩";
         }
-        else if (language.Equals("中文"))
+        else if (Language.Equals("中文"))
         {
-            language = "English";
+            Language = "English";
             playBtnText.text = "Play";
         }
-        languageBtnText.text = language;
+        languageBtnText.text = Language;
         // https://answers.unity.com/questions/883220/how-to-change-selected-button-in-eventsystem-or-de.html
         // The 'selected' property of a button cannot be manipulated through the button itself.
         // Because I'm calling this when the language button is clicked, it will always deselect the right thing.
